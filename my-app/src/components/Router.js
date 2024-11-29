@@ -7,10 +7,6 @@ import Jewelery from "./Jewelery";
 import Electronics from "./Electronics";
 import Menclothing from "./Menclothing";
 import Womenclothing from "./Womenclothing"
-import Popup from "./Popup";
-
-
-
 
 function Router(){
     return (
