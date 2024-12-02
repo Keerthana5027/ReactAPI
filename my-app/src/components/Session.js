@@ -8,7 +8,7 @@ function Session(){
        <>        
        <Header/>       
         <section>
-            <Product />           
+            {/* <Product />            */}
             <Outlet />
         </section>
         <Footer/>

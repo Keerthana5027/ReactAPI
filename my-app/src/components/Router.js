@@ -7,12 +7,14 @@ import Jewelery from "./Jewelery";
 import Electronics from "./Electronics";
 import Menclothing from "./Menclothing";
 import Womenclothing from "./Womenclothing"
+import Product from "./Product";
 
 function Router(){
     return (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Session />}>
+            <Route index element={<Product/>} />
               <Route path="sign-in" element={<Signin />} /> 
               <Route path="sign-out" element={<Signout />} />
               <Route path="jewelery" element={<Jewelery/>} />
