@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Popup from './Popup';
+import Cart from './Cart';
+import { Link } from 'react-router-dom';
+
 
 function Menclothing() {
   const [items, setItems] = useState([]);
@@ -22,10 +25,11 @@ function Menclothing() {
           <img src={item.image} alt={item.title} className="item-image" />
           <p>{item.description}</p>
           <p>Price: ${item.price}</p>
-          <button className='btn'>Add To Cart</button>
-          <br/>
-          <br/>
-          <button className='btn' onClick={Popup}>Buy Now</button>
+          <Link to="cart">
+           <button className='btn'>Add To Cart</button> </Link>
+           <br/>
+           <br/>
+           <button className='btn' onClick={Popup}>Buy Now</button>
         </div>
       ))}
     </div>
@@ -33,3 +37,4 @@ function Menclothing() {
 }
 
 export default Menclothing;
+

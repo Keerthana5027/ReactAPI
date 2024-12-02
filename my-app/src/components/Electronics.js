@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Popup from './Popup';
+import { Link } from 'react-router-dom';
 
 function Electronics() {
   const [items, setItems] = useState([]);
@@ -13,22 +14,24 @@ function Electronics() {
   }, []);
 
   return (
-    <div className="card-container">
-      {items.map((item) => (
-        <div key={item.id} className="card">
-          <h3>ID={item.id}</h3>
-          <hr />
-          <h2>{item.title}</h2>
-          <img src={item.image} alt={item.title} className="item-image" />
-          <p>{item.description}</p>
-          <p>Price: ${item.price}</p>
-          <button className='btn'>Add To Cart</button>
-          <br/>
-          <br/>
-          <button className='btn' onClick={Popup}>Buy Now</button>
+        <div className="card-container">
+          {items.map((item) => (
+            <div key={item.id} className="card">
+              <h3>ID={item.id}</h3>
+              <hr/>
+              <h2>{item.title}</h2>
+              <img src={item.image} alt={item.title} className="item-image" />
+              <p>{item.description}</p>
+              <p>Price: ${item.price}</p>
+              <Link to="cart">
+              <button className='btn'>Add To Cart</button> </Link>
+               <br/>
+               <br/>
+               <button className='btn' onClick={Popup}>Buy Now</button>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  );
+      );
+    
 }
 export default Electronics;

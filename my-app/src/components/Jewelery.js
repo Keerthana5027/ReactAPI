@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Popup from './Popup';
 
+
 function Jewelery() {
   const [items, setItems] = useState([]);
 
@@ -23,7 +24,8 @@ function Jewelery() {
           <img src={item.image} alt={item.title} className="item-image" />
           <p>{item.description}</p>
           <p>Price: ${item.price}</p>
-           <button className='btn'>Add To Cart</button>
+          <Link to="cart">
+          <button className='btn'>Add To Cart</button> </Link>
            <br/>
            <br/>
            <button className='btn' onClick={Popup}>Buy Now</button>

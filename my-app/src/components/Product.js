@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Jewelery from './Jewelery';
 import Router from './Router';
 import { Link } from 'react-router-dom';
+
 
 function Product() {
   const [categories, setCategories] = useState([]);
@@ -15,6 +15,12 @@ function Product() {
   }, []);
 
   return (
+    <>
+    <br/>
+    <center>
+      <Link to="tableproduct">
+    <button className='btn-product'>All Product Details</button> </Link>
+    </center>
     <div className="card-product-container">
       {categories.map((category) => (
         <div key={category} className="product-card">
@@ -24,6 +30,7 @@ function Product() {
         </div>
       ))}
     </div>
+    </>
   );
 }
 // target='_blank'
