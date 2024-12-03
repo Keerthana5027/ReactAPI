@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Popup from './Popup';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Electronics() {
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch data from the API
@@ -13,25 +13,27 @@ function Electronics() {
       .catch((error) => console.error('Error fetching items:', error));
   }, []);
 
+  const handleAddToCart = (itemId) => {
+    navigate(`/cart/${itemId}`);
+  };
+
   return (
-        <div className="card-container">
-          {items.map((item) => (
-            <div key={item.id} className="card">
-              <h3>ID={item.id}</h3>
-              <hr/>
-              <h2>{item.title}</h2>
-              <img src={item.image} alt={item.title} className="item-image" />
-              <p>{item.description}</p>
-              <p>Price: ${item.price}</p>
-              <Link to="cart">
-              <button className='btn'>Add To Cart</button> </Link>
-               <br/>
-               <br/>
-               <button className='btn' onClick={Popup}>Buy Now</button>
-            </div>
-          ))}
+    <div className="card-container">
+      {items.map((item) => (
+        <div key={item.id} className="card">
+          <h3>ID={item.id}</h3>
+          <hr />
+          <h2>{item.title}</h2>
+          <img src={item.image} alt={item.title} className="item-image" />
+          <p>{item.description}</p>
+          <p>Price: ${item.price}</p>
+          <button className='btn' onClick={()=>handleAddToCart(item.id)}>Add To Cart</button>
         </div>
-      );
-    
+      ))}
+    </div>
+  );
 }
 export default Electronics;
+
+
+// https://fakestoreapi.com/products/category/electronics

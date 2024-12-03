@@ -40,7 +40,7 @@ function Tableproduct(){
                 <td>{product.description}</td>
                 <td>${product.price}</td>
                 <td>
-                    <button className='btn' onClick={Delete}>Delete</button>
+                <button className='btn' onClick={() => Delete(product.id, setProducts)}>Delete</button>
                     <br/>
                     <br/>
                     <button className='btn' onClick={Edit}>Edit</button>
