@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Delete from './Delete';
 import Edit from './Edit';
+import useFetchItems from './useFetchItems';
 
 function Tableproduct(){
-      const [products, setProducts] = useState([]);
+      const [products,setProducts] = useState([]);
+
+      // const [data]=useFetchItems("https://fakestoreapi.com/products")
     
       useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -40,10 +43,10 @@ function Tableproduct(){
                 <td>{product.description}</td>
                 <td>${product.price}</td>
                 <td>
-                <button className='btn' onClick={() => Delete(product.id, setProducts)}>Delete</button>
+                <button className='btn' onClick={() => Delete(product.id, setProducts)}>Delete</button>     
                     <br/>
                     <br/>
-                    <button className='btn' onClick={Edit}>Edit</button>
+                    <button className='btn' onClick={() => Edit(product.id)}>Update</button>
                 </td>
               </tr>
             ))}
@@ -52,3 +55,5 @@ function Tableproduct(){
       );   
 }
 export default Tableproduct
+
+// , setProducts

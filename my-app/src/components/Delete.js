@@ -1,10 +1,3 @@
-// function Delete(){
-//             alert('Product deleted successfully!');
-// }
-// export default Delete
-
-
-// Delete.js
 function Delete(productId, setProducts) {
     fetch(`https://fakestoreapi.com/products/${productId}`, {
       method: "DELETE",
@@ -20,4 +13,3 @@ function Delete(productId, setProducts) {
   }
   
   export default Delete;
-  

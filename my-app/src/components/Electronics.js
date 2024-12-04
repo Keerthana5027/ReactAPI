@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useFetchItems from './useFetchItems';
 
 function Electronics() {
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Fetch data from the API
-    fetch("https://fakestoreapi.com/products/category/electronics")
-      .then(res => res.json())
-      .then(json => setItems(json))  // Update the state with fetched data
-      .catch((error) => console.error('Error fetching items:', error));
-  }, []);
+  const [data]=useFetchItems("https://fakestoreapi.com/products/category/electronics")
+
+  // useEffect(() => {
+  //   // Fetch data from the API
+  //   fetch("https://fakestoreapi.com/products/category/electronics")
+  //     .then(res => res.json())
+  //     .then(json => setItems(json))  // Update the state with fetched data
+  //     .catch((error) => console.error('Error fetching items:', error));
+  // }, []);
 
   const handleAddToCart = (itemId) => {
     navigate(`/cart/${itemId}`);
@@ -19,7 +22,7 @@ function Electronics() {
 
   return (
     <div className="card-container">
-      {items.map((item) => (
+      {data.map((item) => (
         <div key={item.id} className="card">
           <h3>ID={item.id}</h3>
           <hr />
@@ -34,6 +37,3 @@ function Electronics() {
   );
 }
 export default Electronics;
-
-
-// https://fakestoreapi.com/products/category/electronics

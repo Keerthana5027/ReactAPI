@@ -1,4 +1,4 @@
-function Edit(){
-   alert("item edited successfully")
-}
-export default Edit
+function Edit(productId) { 
+   alert(`Product with ID ${productId} updated successfully`); 
+} 
+export default Edit;
