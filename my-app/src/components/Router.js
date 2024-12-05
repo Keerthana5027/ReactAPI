@@ -10,6 +10,8 @@ import Womenclothing from "./Womenclothing"
 import Product from "./Product";
 import Tableproduct from "./Tableproduct";
 import Cart from "./Cart";
+import Footer from "./Footer";
+import Deals from "./Deals";
 
 function Router(){
     return (
@@ -20,6 +22,7 @@ function Router(){
               <Route path="sign-in" element={<Signin />} /> 
               <Route path="sign-out" element={<Signout />} />
               <Route path="tableproduct" element={<Tableproduct/>} />
+              <Route path="deals" element={<Deals/>} />
               <Route path="cart/:id" element={<Cart/>} />
               <Route path="jewelery" element={<Jewelery/>} />
               <Route path="Electronics" element={<Electronics/>} />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetchItems from './useFetchItems';
+import Cart from './Cart';
 
 function Womenclothing() {
   // const [items, setItems] = useState([]);
