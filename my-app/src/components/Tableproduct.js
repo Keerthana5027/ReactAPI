@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Delete from './Delete';
 import Edit from './Edit';
+import { useNavigate } from 'react-router-dom';
+import Cart from './Cart'
 
 function Tableproduct() {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [limit, setLimit] = useState(5); // Default limit
     const [search, setSearch] = useState(''); // State for search input
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products?limit=${limit}`)
@@ -24,6 +27,10 @@ function Tableproduct() {
         );
         setFilteredProducts(filtered);
     }, [search, products]);
+
+    const handleAddToCart = (itemId) => {
+        navigate(`/cart/${itemId}`);
+      };
 
     return (
         <>
@@ -48,7 +55,7 @@ function Tableproduct() {
             </thead>
             <tbody>
                 {filteredProducts.map((product) => (
-                    <tr key={product.id}>
+                    <tr key={product.id} onClick={()=>handleAddToCart(product.id)}>
                         <td>{product.id}</td>
                         <td>{product.title}</td>
                         <td>
@@ -56,8 +63,8 @@ function Tableproduct() {
                                 src={product.image} 
                                 alt={product.title} 
                                 className="product-image" 
-                                style={{ width: '50px', height: '50px' }} 
-                            />
+                                style={{ width: '50px', height: '50px' }}
+                                />
                         </td>
                         <td>{product.description}</td>
                         <td>${product.price}</td>

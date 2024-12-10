@@ -247,6 +247,7 @@ form .btn:hover {
   overflow: hidden;
   width: 300px;
   text-align: center;  
+ 
 }
 .product-card:hover {
   transform: translateY(-10px);
@@ -313,14 +314,23 @@ height: 500px;
   box-shadow: 5px 5px 5px 5px darkgrey;
   cursor: pointer;
 }
-.card-container .btn{
+.card-container .btn {
   background-color: #555;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
-.card-container .btn:hover{
+.card-container .btn:hover {
   background-color: #777;
   color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
+
 
 /* Table product */
 .table {
@@ -421,50 +431,67 @@ height: 500px;
 }
 
 /* cart.js */
-.card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+.single-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  max-width: 400px;
-  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.card h3 {
-  font-size: 18px;
-  color: #333;
+
+.single-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #337ab7;
+  margin-bottom: 10px;
 }
-.card hr {
+
+.single-card hr {
+  border: none;
+  border-top: 1px solid #ccc;
   margin: 10px 0;
 }
-.card h2 {
+
+.single-card h2 {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
-.item-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 15px 0;
-  object-fit: cover;
+
+.single-card img {
+  width: 40%;
+  height:auto;
+  /* object-fit: cover; */
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
-.card p {
+
+.single-card p {
   font-size: 16px;
-  color: #555;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
-.btn {
-  padding: 10px 20px;
-  background-color: #777;
-  color: white;
+
+.single-card .price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #337ab7;
+  margin-bottom: 10px;
+}
+
+.single-card button {
+  background-color: #f0c14b;
   border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
 }
-.btn:hover {
-  background-color: #555;
-  transform: scale(1.05);
+
+.single-card button:hover {
+  background-color: #ddb933;
 }
