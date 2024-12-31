@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Delete from './Delete';
 import Edit from './Edit';
 import { useNavigate } from 'react-router-dom';
-import Cart from './Cart'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Tableproduct() {
     const [products, setProducts] = useState([]);
@@ -69,10 +69,10 @@ function Tableproduct() {
                         <td>{product.description}</td>
                         <td>${product.price}</td>
                         <td>
-                            <button className='btn' onClick={() => Delete(product.id, setProducts)}>Delete</button>
+                            <button className='btn btn-secondary' onClick={() => Delete(product.id, setProducts)}>Delete</button>
                             <br />
-                            <br />
-                            <button className='btn' onClick={() => Edit(product.id)}>Update</button>
+                            <br/>
+                            <button className='btn btn-secondary' onClick={() => Edit(product.id)}>Update</button>
                         </td>
                     </tr>
                 ))}
@@ -93,6 +93,4 @@ function Tableproduct() {
       </>
     );
 }
-
 export default Tableproduct;
-

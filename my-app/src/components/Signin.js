@@ -4,7 +4,7 @@ function Signin() {
         <body class="sign">
            <div class="sign-in-form"> 
             <h2>Sign In</h2> 
-            <form> 
+            <form action="/"> 
                 <div class="form-group"> 
                     <label for="email">Email:</label> 
                     <input type="email" id="email" name="email" required/> 

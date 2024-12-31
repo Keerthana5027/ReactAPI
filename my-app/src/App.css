@@ -19,62 +19,10 @@
   letter-spacing: 2px;
   margin-left: 15px;
 }
-.search-bar {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  max-width: 700px;
-  margin: 0 20px;
-}
-.search-bar select, .search-bar input, .search-bar button {
-  height: 40px; 
-}
-.search-bar select {
-  padding: 0 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  background-color: #fff;
-  color: #000;
-  width: 120px; 
-}
-.search-bar input {
-  flex: 1;
-  padding: 0 10px; 
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-radius: 0;
-}
-.search-bar button {
-  padding: 0 20px;
-  background-color: #ff9900;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  color: #fff;
-  font-size: 16px;
-}
-.search-bar button:hover {
-  background-color: #e68a00;
-}
 .auth-buttons {
   display: flex;
   gap: 15px;
-}
-.auth-buttons .btn {
-  padding: 10px 20px;
-  background-color: #ff9900;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-.auth-buttons .btn:hover {
-  background-color: #e68a00;
-  transform: scale(1.05);
-}
+} 
 .nav-links {
   display: flex;
   justify-content: center;
@@ -97,9 +45,6 @@
   border-radius: 10px;
   font-size: 24px;
   font-style: italic;
-  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReNgpM76n1VW4yvAofNQQr69Mo5tOeboBiog&s");
-  background-repeat: no-repeat;
-  background-size: cover; */
 } 
 
 /* Footer.js */
@@ -233,49 +178,52 @@ form .btn:hover {
 }
 
 /* product.js */
+/* Container for the product cards */
 .card-product-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  padding: 90px;
+  padding: 20px;
+  gap: 20px;
+  background-color: #f8f9fa;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwech4Qa8zE2aBI5f0tjIVX1MtXSEfZD70w&s");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.product-card {
-  background-color: #fff;
+/* Each product card */
+.products-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
   border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 300px;
-  text-align: center;  
- 
+  transition: transform 0.2s;
 }
-.product-card:hover {
-  transform: translateY(-10px);
+.products-card:hover {
+  transform: scale(1.05);
 }
-.product-card img {
+/* Product images */
+.products-card img {
   width: 100%;
-  height: 200px; 
-  object-fit: cover;
-  border-bottom: 1px solid #eee;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
-.product-card .btn {
-  margin: 15px 0;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Product titles */
+.products-card h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0;
 }
-.product-card .btn:hover {
-  background-color: #555;
+/* Product descriptions */
+.products-card p {
+  font-size: 14px;
+  color: #777;
 }
-.design-product{
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZLxeYCmKdDsYKsG4gVNbIiRhB103r8xsUxw&s");
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-}
+
+
 
 /* design products like electronics,jewellary,men's cloth,women's cloth */
 .btn-product{
@@ -295,6 +243,7 @@ height: 500px;
   margin: 10px;
   padding: 20px;
   text-align: center;
+  align-items: center;
   width: 300px;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeMVrPKrGrfSuHktmKUzaGXtFiGDFn7OHxsQ&s");
   background-repeat: no-repeat;
@@ -305,6 +254,7 @@ height: 500px;
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
+  align-items: center;
 }
 .card p {
   font-size: 16px;
@@ -441,26 +391,22 @@ height: 500px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .single-card h3 {
   font-size: 16px;
   font-weight: bold;
   color: #337ab7;
   margin-bottom: 10px;
 }
-
 .single-card hr {
   border: none;
   border-top: 1px solid #ccc;
   margin: 10px 0;
 }
-
 .single-card h2 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .single-card img {
   width: 40%;
   height:auto;
@@ -468,19 +414,16 @@ height: 500px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
-
 .single-card p {
   font-size: 16px;
   margin-bottom: 10px;
 }
-
 .single-card .price {
   font-size: 24px;
   font-weight: bold;
   color: #337ab7;
   margin-bottom: 10px;
 }
-
 .single-card button {
   background-color: #f0c14b;
   border: none;
@@ -491,7 +434,6 @@ height: 500px;
   border-radius: 5px;
   cursor: pointer;
 }
-
 .single-card button:hover {
   background-color: #ddb933;
 }

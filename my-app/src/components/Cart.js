@@ -33,7 +33,7 @@ function Cart() {
       <h3>ID={data.id}</h3>
       <hr />
       <h2>{data.title}</h2>
-      <img src={data.image} alt={data.title} className="item-image" />
+      <center><img src={data.image} alt={data.title} className="item-image" /></center>
       <p>{data.description}</p>
       <p>Price: ${data.price}</p>
       <button className="btn btn-success" onClick={handleBuyNow}>Buy now</button>
